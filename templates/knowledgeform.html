@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags%}
+{% block title %}Preference Form{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<h2>Preference Form</h2>
+<form action="/contentform/" method="post">
+{% csrf_token %}
+
+{{form|crispy}}
+
+
+<input type="submit", value="Next" id="submit"/>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags%}
+{% block title %}Preference Form{% endblock %}
+
+{% block content %}
+
+<h2>Preference Form</h2>
+<h5>With the selection list open you can search for a show by typing the first few letters of the show</h5>
+<form action="/contentresults/" method="post">
+{% csrf_token %}
+
+{{form|crispy}}
+
+<input type="submit", value="Submit" id="submit"/>
+</form>
+{% endblock %}

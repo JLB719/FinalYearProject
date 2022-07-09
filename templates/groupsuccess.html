@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Created Group Sucessfully{% endblock %}
+
+{% block content %}
+
+
+<h2>Created {{groupname}}</h2>
+
+<p>Give <em>{{grouplink}}</em> to other users so that they can join the same group</p>
+<p><a href="{% url 'joingroup' %}">Join a group</a></p>
+<p><a href="{% url 'selectgroupgenerate' %}">Generate preferences for group</a></p>
+{% endblock %}

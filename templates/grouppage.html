@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags%}
+{% block title %}Join Group{% endblock %}
+
+{% block content %}
+
+
+
+<form action="/joingroupsuccess/" method = "post">
+{% csrf_token %}
+{{form|crispy}}
+<input type="submit" value="Join Group" id="submit"/>
+</form>
+
+{% endblock %}

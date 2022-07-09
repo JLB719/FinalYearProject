@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}All shows{% endblock %}
+
+{% block content %}
+
+
+<h2>All the shows that are in the data set</h2>
+<h4>Click on the title of the show to see more info</h4>
+{% for i in data %}
+
+    <a href={{ i.url }} target="_blank">{{ i.title }}</a>
+    <br>
+    <img src={{ i.image}} style="width: 15%">
+    <br>
+{% endfor %}
+
+{% endblock %}
+

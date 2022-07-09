@@ -1,0 +1,40 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #116466;
+  color:rgb(255, 0, 0)
+}
+a {
+  color:rgb(255, 31, 31)
+}
+
+
+.navbar {
+  background:#2C3531;
+}
+
+/* .nav-link,
+.navbar-brand {
+  
+} */
+.custom {
+  /* color: #000; */
+  color: rgb(255, 1, 1);
+  justify-content: end;
+}
+.nav-link {
+  margin-right: 1em !important;
+  color:rgb(0, 255, 0)
+}
+.nav-link:hover {
+  color: rgb(255, 0, 0);
+}
+.navbar-collapse
+ {
+  color: rgb(172, 8, 8);
+  justify-content: flex-start;
+}
+
+.nav-link {
+  color: rgb(255, 38, 38);
+}

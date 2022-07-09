@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Nopreference{% endblock %}
+{% block content %}
+<h1> You have not entered any preferences therefore cannot display recommendations </h1>
+<h4>Please go <a href="{% url 'form' %}"> here</a></h4>
+{% endblock %}

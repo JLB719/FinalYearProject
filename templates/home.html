@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <h3>Hi {{ user.username }}</h3>
+  <h4>To get started go <a href="{% url 'form' %}">here</a></h4>
+
+{% else %}
+  <h3>You are not logged in</h3>
+
+{% endif %}
+
+<h1>How the algorithm works</h1>
+<p>The algorithm consists of two steps the first is knowledge filtering, the second is content filtering</p>
+<h3><b>Knowledge filtering</b></h3>
+<p>The algorithm goes through all of the data and filters out the irrelevant data. For example, if you only wanted to watch TV shows made in the UK then it would filter out all of
+the TV shows that were not made in the UK. Or if you only wanted to watch a maximum of 100 episodes of a TV show then it would filter out the TV shows that have more than 100 episodes.</p>
+<p>The algorithm also doesgenre filtering. It only keeps TV shows in the genres you like and gets rid of TV shows in all other genres. Most TV shows are in more than one genre. The algorithm gets rid of all the TV shows that
+the disliked genre, even if the show is also in one of the genres you like.</p>
+<h3><b>Content filtering</b></h3>
+<p>Once the data has been filtered, "Term Frequency - Inverse Document Frequency" (TF-IDF) is applied to the plots and summaries of the remaining TV shows. TF-IDF is calculated by multiplying 
+the term frequency, which is how many times a word appears in a document, with the inverse document frequency, which is how common or rare a word is in the entire plot and summary set. TFIDF is used to weigh
+a keyword in any plot and summary and assign importance to the keyword in that plot and summary. "Stop" words, such as 'an' and 'is' are removed from the plot and summary.</p>
+<p> The cosine similarity is then calculated on the TF-IDF scores - this measures the similarity of the plots and summaries of your liked TV shows to the plots and summaries of 
+  the other TV shows in the rest of the data. The average similarity score of a TV show in the dataset is compared with your liked TV shows. 
+  The same is done with your disliked TV shows except that those scores are multiplied by -1.</p>
+<p> At the same time the count vectorizer is applied to the cast and genres. TF-IDF provides the importance of a word but this is not needed for cast and genres - 
+count vectorizer is used instead. The same process that was applied to plot and summary is applied to cast and genres. The two average scores are then added up to form an overall score.
+Once this is all done the top 10 TV shows are recommended to you. </p>
+{% endblock %}

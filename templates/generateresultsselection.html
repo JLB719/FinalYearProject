@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags%}
+{% block title %}Generated results<{% endblock %}
+
+{% block content %}
+
+
+
+<form action="/showsgroup/" method = "post">
+{% csrf_token %}
+{{form|crispy}}
+<input type="submit" value="Generate Results", id="submit"/>
+</form>
+{% endblock %}
